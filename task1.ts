@@ -73,3 +73,18 @@ for (let elem of arr2) {
 }
 
 console.log(list.toArray());
+
+//only using arrays
+function sortArr<T>(arr1: Array<T>, arr2: Array<T>): Array<T> {
+    let resultArr: Array<T> = [];
+    arr1.forEach(arr1el => {
+        let result: Array<T> = arr2.filter(arr2el => {
+            return arr1el === arr2el;
+        });
+        resultArr = resultArr.concat(result);
+    });
+
+     return resultArr;
+}
+
+console.log(sortArr<string>(arr1, arr2));
